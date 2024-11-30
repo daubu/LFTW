@@ -1,0 +1,27 @@
+/* 
+ * Filename: _mixins.scss
+ * Author: Elmar Beckmann
+ * Co-Authors: 
+ * Date Created: 05/08/2013
+ * ------
+ * Information: This file contains all custom mixins
+ * Notes:
+ */
+
+/**
+ * Breakpoint Mixin
+ *
+ * breakpoint mixin
+ * use @include breakpoint(small) { ... }
+ 
+ * or without this use @media only screen and (min-width: 900px) { ... }
+ */
+@mixin breakpoint($point) {
+	@media only screen and (min-width: #{$point}) { @content; }
+}
+
+@mixin between-breakpoints($min, $max) {
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
